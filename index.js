@@ -14,7 +14,7 @@ const asyncExec = command => new Promise((resolve, reject) => {
 
 
 
-router.get('/updateGitRepo', async (context, next) => {
+router.all('/updateGitRepo', async (context, next) => {
   await asyncExec('cd /var/www/html/schoolcms && git pull');
   context.body = 'ok';
 });
